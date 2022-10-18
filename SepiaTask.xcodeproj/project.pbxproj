@@ -56,6 +56,9 @@
 		FA24AF7328FEF2B800A8210E /* SepiaTask */ = {
 			isa = PBXGroup;
 			children = (
+				FA24AF8B28FEF30900A8210E /* Resources */,
+				FA24AF8928FEF2E900A8210E /* PetDetails */,
+				FA24AF8828FEF2DB00A8210E /* PetListing */,
 				FA24AF7428FEF2B800A8210E /* AppDelegate.swift */,
 				FA24AF7628FEF2B800A8210E /* SceneDelegate.swift */,
 				FA24AF7828FEF2B800A8210E /* ViewController.swift */,
@@ -65,6 +68,27 @@
 				FA24AF8228FEF2B900A8210E /* Info.plist */,
 			);
 			path = SepiaTask;
+			sourceTree = "<group>";
+		};
+		FA24AF8828FEF2DB00A8210E /* PetListing */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PetListing;
+			sourceTree = "<group>";
+		};
+		FA24AF8928FEF2E900A8210E /* PetDetails */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PetDetails;
+			sourceTree = "<group>";
+		};
+		FA24AF8B28FEF30900A8210E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
