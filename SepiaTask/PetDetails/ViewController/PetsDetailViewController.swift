@@ -13,6 +13,7 @@ class PetsDetailViewController: UIViewController {
 
     var contentURL:String = ""
     @IBOutlet weak var webview: WKWebView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     class func instanceFromStoryboard(contentURL:String) -> PetsDetailViewController? {
         let vc = UIStoryboard.main.instantiateViewController(withIdentifier: "PetsDetailViewController") as? PetsDetailViewController
@@ -23,6 +24,7 @@ class PetsDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        webview.navigationDelegate = self
         webview.load(URLRequest(url: URL(string:contentURL)!))
         // Do any additional setup after loading the view.
     }
@@ -38,4 +40,37 @@ class PetsDetailViewController: UIViewController {
     }
     */
 
+}
+
+extension PetsDetailViewController {
+    
+    func showActivityIndicator(isShow:Bool){
+        
+        if isShow{
+            activityIndicator.isHidden = false
+            activityIndicator.startAnimating()
+        }
+        else{
+            activityIndicator.stopAnimating()
+            activityIndicator.isHidden = true
+        }
+        
+    }
+    
+}
+
+extension PetsDetailViewController: WKNavigationDelegate {
+    
+    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+        showActivityIndicator(isShow: true)
+    }
+
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        showActivityIndicator(isShow: false)
+    }
+
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        showActivityIndicator(isShow: false)
+    }
+    
 }

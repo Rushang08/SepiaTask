@@ -97,17 +97,23 @@
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="qru-tZ-IcZ">
+                                <rect key="frame" x="197" y="443" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8fu-d1-1js"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="URi-Bp-hJ3" firstAttribute="leading" secondItem="8fu-d1-1js" secondAttribute="leading" id="3A3-fe-sid"/>
+                            <constraint firstItem="qru-tZ-IcZ" firstAttribute="centerY" secondItem="8fu-d1-1js" secondAttribute="centerY" id="Exh-JU-wM7"/>
                             <constraint firstItem="URi-Bp-hJ3" firstAttribute="trailing" secondItem="8fu-d1-1js" secondAttribute="trailing" id="Sy0-US-YMD"/>
+                            <constraint firstItem="qru-tZ-IcZ" firstAttribute="centerX" secondItem="8fu-d1-1js" secondAttribute="centerX" id="ouQ-sx-7V0"/>
                             <constraint firstItem="URi-Bp-hJ3" firstAttribute="bottom" secondItem="8fu-d1-1js" secondAttribute="bottom" id="pZq-0m-7fS"/>
                             <constraint firstItem="URi-Bp-hJ3" firstAttribute="top" secondItem="8fu-d1-1js" secondAttribute="top" id="vVT-vc-Ggh"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="qru-tZ-IcZ" id="Wbw-VX-BOd"/>
                         <outlet property="webview" destination="URi-Bp-hJ3" id="tMz-A1-VJB"/>
                     </connections>
                 </viewController>

@@ -10,7 +10,7 @@ import UIKit
 class PetsViewModel: NSObject {
     
     var arrPets: [Pets] = [Pets]()
-
+    
     func getPetsData() {
         if let path = Bundle.main.path(forResource: "pets_list", ofType: "json") {
             do {
@@ -22,13 +22,13 @@ class PetsViewModel: NSObject {
                         let arrPet = Pets(petData: data as! [String : Any] )
                         arrPets.append(arrPet)
                     }
+                    
                 }
             } catch {
-                arrPets = []
+                // handle error
             }
         }
     }
-    
     
 }
 
