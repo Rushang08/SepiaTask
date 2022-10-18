@@ -8,16 +8,18 @@
 import UIKit
 
 class Pets {
+    
     var image_url: String?
     var title: String?
     var content_url: String?
     var date_added: String?
     
-    init(image_url: String?,title: String?,content_url: String?,date_added: String?){
+    init(petData:[String : Any]){
         
-        self.image_url = image_url
-        self.title = title
-        self.content_url = content_url
-        self.date_added = date_added
+        self.image_url = petData["image_url"] as? String
+        self.title = petData["title"] as? String
+        self.content_url = petData["content_url"] as? String
+        self.date_added = petData["date_added"] as? String
+        
     }
 }

@@ -33,22 +33,21 @@ extension PetsListingViewController{
 }
 
 extension PetsListingViewController: UITableViewDelegate,UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return petsVM.arrPets.count
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "PetsTableViewCell") as? PetsTableViewCell
-        let dict: [String: Any] = petsVM.arrPets[indexPath.row] as! [String : Any]
-        cell!.setupData(arrDict: dict)
+        cell!.setupData(petData: petsVM.arrPets[indexPath.row])
         return cell!
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
-        let dict: [String: Any] = petsVM.arrPets[indexPath.row] as! [String : Any]
-        let vc = PetsDetailViewController.instanceFromStoryboard(contentURL: dict["content_url"] as! String)
+        let vc = PetsDetailViewController.instanceFromStoryboard(contentURL: petsVM.arrPets[indexPath.row].content_url!)
         self.navigationController?.pushViewController(vc!, animated: true)
-
     }
+    
 }
-

@@ -23,11 +23,13 @@ class PetsTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    func setupData(arrDict:[String : Any]) {
-                
-        self.lblPetName?.text = arrDict["title"] as? String
-        self.imgViewPet?.imageFromUrl(urlString: arrDict["image_url"] as! String)
-        
+}
+
+extension PetsTableViewCell {
+    
+    func setupData(petData:Pets) {
+        self.lblPetName?.text = petData.title
+        self.imgViewPet?.imageFromUrl(urlString: petData.image_url!)
     }
 
 }
