@@ -28,7 +28,7 @@
 
 #Dependency Management
 
-- No Third Party require :)
+- No Third Party required ;)
 
 #Minimum iOS Version Requirement 
 
