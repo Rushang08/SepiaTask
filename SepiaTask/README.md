@@ -23,7 +23,8 @@
 
 #Project Structure
 
-- MVVM 
+- MVVM : The well-ordered and perhaps the most reusable way to organize your code is to use the 'MVVM' pattern. The Model, View, ViewModel (MVVM pattern) is all about guiding you in how to organize and structure your code to write maintainable, testable and extensible applications.
+
 
 #Dependency Management
 

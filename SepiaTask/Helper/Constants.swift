@@ -31,10 +31,7 @@ extension String {
     static let validHoursRegex: String = "^[A-Z]-[A-Z]\\s{1}(\\d{1,2}:\\d{2})\\s{1}-\\s{1}(\\d{1,2}:\\d{2})$"
     static let invalidHours: String = "You are out of your working hours! Please try again!!! "
     static let somethingWentWrong: String = "Something went wrong. Please try again."
-    func toJSON() -> Any? {
-        guard let data = self.data(using: .utf8, allowLossyConversion: false) else { return nil }
-        return try? JSONSerialization.jsonObject(with: data, options: .mutableContainers)
-    }
+    
 }
 
 extension UIStoryboard {
