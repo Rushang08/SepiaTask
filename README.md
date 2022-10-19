@@ -38,6 +38,6 @@
 
 #Unit Test Case
 
-- setup the test case for data verification
+- Setup the test case for data verification
 
 
