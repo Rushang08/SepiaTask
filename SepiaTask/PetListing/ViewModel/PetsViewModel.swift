@@ -12,7 +12,7 @@ class PetsViewModel: NSObject {
     var arrPets: [Pets] = [Pets]()
     
     func getPetsData() {
-        if let path = Bundle.main.path(forResource: "pets_list", ofType: "json") {
+        if let path = Bundle.main.path(forResource: String.jsonFilepetsList, ofType: String.jsonFileFormat) {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
                 let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
@@ -30,27 +30,4 @@ class PetsViewModel: NSObject {
         }
     }
     
-}
-
-
-
-extension UIImageView {
-    public func imageFromUrl(urlString: String) {
-        if let url = NSURL(string: urlString) {
-            let request = NSURLRequest(url: url as URL)
-            NSURLConnection.sendAsynchronousRequest(request as URLRequest, queue: OperationQueue.main) {
-                (response: URLResponse?, data: Data?, error: Error?) -> Void in
-                if let imageData = data as Data? {
-                    self.image = UIImage(data: imageData)
-                }
-            }
-        }
-    }
-}
-extension UIStoryboard {
-    @objc static var main: UIStoryboard {
-        get {
-            return UIStoryboard(name: "Main", bundle: nil)
-        }
-    }
 }

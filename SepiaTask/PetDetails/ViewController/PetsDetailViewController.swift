@@ -12,7 +12,7 @@ import WebKit
 class PetsDetailViewController: UIViewController {
 
     var contentURL:String = ""
-    @IBOutlet weak var webview: WKWebView!
+    @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     class func instanceFromStoryboard(contentURL:String) -> PetsDetailViewController? {
@@ -24,8 +24,7 @@ class PetsDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        webview.navigationDelegate = self
-        webview.load(URLRequest(url: URL(string:contentURL)!))
+        loadPetDetailFromURL()
         // Do any additional setup after loading the view.
     }
     
@@ -44,6 +43,15 @@ class PetsDetailViewController: UIViewController {
 
 extension PetsDetailViewController {
     
+    // Load WKWebview from URL
+    func loadPetDetailFromURL(){
+        
+        webView.navigationDelegate = self
+        webView.load(URLRequest(url: URL(string:contentURL)!))
+
+    }
+    
+    // Show Activity Indicator when webView load
     func showActivityIndicator(isShow:Bool){
         
         if isShow{
@@ -59,6 +67,8 @@ extension PetsDetailViewController {
     
 }
 
+
+// MARK: - WKNAV DELEGATE METHODS
 extension PetsDetailViewController: WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {

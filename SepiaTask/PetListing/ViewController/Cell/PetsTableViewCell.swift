@@ -10,7 +10,7 @@ import UIKit
 class PetsTableViewCell: UITableViewCell {
     
     
-    @IBOutlet weak var imgViewPet: UIImageView!
+    @IBOutlet weak var imgViewPet: ImageLoader!
     @IBOutlet weak var lblPetName: UILabel!
     
     override func awakeFromNib() {
@@ -29,7 +29,7 @@ extension PetsTableViewCell {
     
     func setupData(petData:Pets) {
         self.lblPetName?.text = petData.title
-        self.imgViewPet?.imageFromUrl(urlString: petData.image_url!)
+        self.imgViewPet?.loadImageWithUrl(URL(string: petData.image_url!)!)
     }
 
 }
