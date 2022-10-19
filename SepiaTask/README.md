@@ -8,21 +8,35 @@
 
 #User Story 1 
 
-There are two screens. The first screen is a list of pets. Each pet item includes pet images and names. 
-Data for showing the list is available in the pets_list.json
+- There are two screens. The first screen is a list of pets. Each pet item includes pet images and names. Data for showing the list is available in the pets_list.json
 
 
 #User Story 2 
 
-Tapping on a pets list item brings up the second screen. This screen is a details screen showing the information related to the given pet which is provided in the pets_list.json as content_url. 
+- Tapping on a pets list item brings up the second screen. This screen is a details screen showing the information related to the given pet which is provided in the pets_list.json as content_url. 
 
 
 #User Story 3
 
-The application content should only be visible during working hours. 
-Working hours details are available in config.json.  In case of non-working hours, the application should block the user from accessing the application content and show the popup message to the user.
+- The application content should only be visible during working hours. Working hours details are available in config.json. In case of non-working hours, the application should block the user from accessing the application content and show the popup message to the user.
+
+
+#Project Structure
+
+- MVVM 
+
+#Dependency Management
+
+- No Third Party require :)
+
+#Minimum iOS Version Requirement 
+
+- 14.0 
+- It’s useful to make an early decision on the minimum iOS version you want to support in your project: knowing which OS versions you need to develop and test against, and which system APIs you can rely on, helps you estimate your workload, and enables you to determine what’s possible and what’s not.
 
 
 #Unit Test Case
 
-setup the test case for data verification
+- setup the test case for data verification
+
+
