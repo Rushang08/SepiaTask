@@ -55,9 +55,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     // Timer expects @objc selector
     @objc func eventWith(timer: Timer!) {
         
-        print("ABC",fetchWorkingHours())
-        
-        let response = "M-F 12:41 - 20:00"
+        let response = fetchWorkingHours()
         let pattern = String.validHoursRegex
         let regex = try! NSRegularExpression(pattern: pattern)
         if let match = regex.matches(in: response, range: .init(response.startIndex..., in: response)).first,

@@ -58,12 +58,11 @@ public func fetchWorkingHours() -> String {
     if let path = Bundle.main.path(forResource: String.jsonFileconfig, ofType: String.jsonFileFormat) {
         do {
             let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-            let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)            
-            if let jsonResult = jsonResult as? Dictionary<String, AnyObject>, let pets = jsonResult["settings"] as? [Any] {
-
-                return " "
-                
+            let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
+            if let jsonResult = jsonResult as? Dictionary<String, AnyObject>, let settings = jsonResult["settings"] as? [String : Any] {
+                return "\(settings["workHours"]!)"
             }
+
         } catch {
             return " "
         }
