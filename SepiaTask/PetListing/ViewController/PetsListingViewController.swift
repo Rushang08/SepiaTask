@@ -25,7 +25,7 @@ class PetsListingViewController: UIViewController {
 extension PetsListingViewController{
     
     func getPetsData(){
-        self.title = "Pets"
+        self.title = String.petsNavtitle
         petsVM.getPetsData()
         self.petsTableview.reloadData()
     }
@@ -40,7 +40,7 @@ extension PetsListingViewController: UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PetsTableViewCell") as? PetsTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: String.petSTableViewCellIdentifire) as? PetsTableViewCell
         cell!.setupData(petData: petsVM.arrPets[indexPath.row])
         return cell!
     }

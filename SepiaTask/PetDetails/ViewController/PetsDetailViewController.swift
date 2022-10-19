@@ -16,7 +16,7 @@ class PetsDetailViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     class func instanceFromStoryboard(contentURL:String) -> PetsDetailViewController? {
-        let vc = UIStoryboard.main.instantiateViewController(withIdentifier: "PetsDetailViewController") as? PetsDetailViewController
+        let vc = UIStoryboard.main.instantiateViewController(withIdentifier: String.petsDetailViewController) as? PetsDetailViewController
         vc?.contentURL = contentURL
         return vc
     }

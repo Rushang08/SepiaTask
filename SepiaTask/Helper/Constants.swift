@@ -13,6 +13,19 @@ extension String {
     static let jsonFileconfig: String = "config"
     static let jsonFilepetsList: String = "pets_list"
     static let jsonFileFormat: String = "json"
+    
+    //VC
+    
+    
+    static let petsDetailViewController: String = "PetsDetailViewController"
+    
+    //CELL INDENTIFIRE
+    
+    static let petSTableViewCellIdentifire: String = "PetsTableViewCell"
+    
+    //NAV TITLE
+    static let petsNavtitle: String = "Pets"
+    
     static let blank: String = ""
     static let alertTitle: String = "Oops!!"
     static let validHoursRegex: String = "^[A-Z]-[A-Z]\\s{1}(\\d{1,2}:\\d{2})\\s{1}-\\s{1}(\\d{1,2}:\\d{2})$"
