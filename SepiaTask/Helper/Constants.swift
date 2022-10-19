@@ -55,6 +55,9 @@ extension UIViewController {
 }
 
 public func fetchWorkingHours() -> String {
+    
+    // Wrong config file has been sent to me, modified and applied the code.  commit:
+    
     if let path = Bundle.main.path(forResource: String.jsonFileconfig, ofType: String.jsonFileFormat) {
         do {
             let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
