@@ -64,7 +64,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             print(response[Range(start, in: response)!])
             let end = match.range(at: 2)
             print(response[Range(end, in: response)!])
-            if !checkIfCurrentTimeIsBetween(startTime: "\(start)", endTime: "\(end)") {
+            if !checkIfCurrentTimeIsBetween(startTime: "\(response[Range(start, in: response)!])", endTime: "\(response[Range(end, in: response)!])") {
                 timer.invalidate()
                 window!.rootViewController?.popupAlert(title: String.alertTitle, message: String.invalidHours, actionTitles: ["OK"], actions:[{action1 in
                     UIApplication.shared.perform(#selector(NSXPCConnection.suspend))

@@ -37,7 +37,7 @@ extension Formatter {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = .init(identifier: "en_US_POSIX")
         dateFormatter.defaultDate = Calendar.current.startOfDay(for: Date())
-        dateFormatter.dateFormat = "hh:mm a"
+        dateFormatter.dateFormat = "HH:mm"
         return dateFormatter
         
     }()
